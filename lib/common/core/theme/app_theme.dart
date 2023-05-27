@@ -1,24 +1,17 @@
-class  A{
-  final int? a;
-  final int? b;
-  final String? c;
-  A( {required this.a, required this.c, required this.b});
+import 'package:flutter/material.dart';
+import 'package:flutter_clean_architecture/common/core/constrants/my_color.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-  Map<String, dynamic> toJson() {
-    return {
-      "a": this.a,
-      "b": this.b,
-      "c": this.c,
-    };
-  }
-
-  factory A.fromJson(Map<String, dynamic> map) {
-    return A(
-      b:map["b"],
-      a:map["a"],
-      c: map["c"],
-    );
-  }
-
-
+class AppThemes {
+  AppThemes._();
+  static final light = ThemeData(
+    colorScheme: ColorScheme.fromSeed(seedColor: MyColor.primariColor),
+    useMaterial3: true,
+    fontFamily: GoogleFonts.poppins().fontFamily,
+  );
+  static final dark = ThemeData(
+    colorScheme: ColorScheme.fromSeed(seedColor: MyColor.secondiColor),
+    useMaterial3: true,
+    fontFamily: GoogleFonts.poppins().fontFamily,
+  );
 }
